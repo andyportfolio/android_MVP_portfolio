@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="kt.kr.co.kiwimedia.www.kiwisms">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <!-- sms -->
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+
+    <application
+        android:name=".presentation.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".presentation.view.intro.IntroActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".presentation.view.login.LoginActivity">
+        </activity>
+        <activity android:name=".presentation.view.fcm.FcmActivity">
+        </activity>
+        <activity
+            android:theme="@style/AppTheme.Activity"
+            android:name=".presentation.view.smslist.SMSListActivity"
+            android:label="@string/activity_title_sms_list">
+        </activity>
+
+        <activity
+            android:theme="@style/AppTheme.Activity"
+            android:name=".presentation.view.smsdetail.SMSDetailsActivity"
+            android:label="@string/activity_title_sms_details">
+        </activity>
+
+        <service android:name=".presentation.view.fcm.FirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name=".presentation.view.fcm.FirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
+
+    </application>
+
+</manifest>

@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">키위미디어 문자전송시스템</string>
+    <string name="activity_title_sms_list">SMS 리스트</string>
+    <string name="activity_title_sms_details">SMS 상세내용</string>
+
+    <string name="prompt_welcome">키위미디어 문자전송시스템 환영합니다.</string>
+    <string name="alert_title">키위미디어 문자전송시스템은 SMS 권한이 필요합니다. 설정버튼을 눌러 SMS권한을 할당하세요 </string>
+    <string name="alert_positive_button">설정</string>
+    <string name="alert_negative_button">취소</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_userid">사용자 아이디</string>
+    <string name="prompt_password">패스워드</string>
+    <string name="action_sign_in">로그인</string>
+    <string name="action_sign_in_short">로그인</string>
+    <string name="error_invalid_userid">사용자 아이디는 필수 입력항목입니다.</string>
+    <string name="error_invalid_password">패스워드는 필수 입력항목입니다</string>
+    <string name="error_field_required">필수 입력항목입니다</string>
+    <string name="error_invlaid_login">사용자 아이디 또는 암호가 틀립니다.</string>
+    <string name="error_login_fail">로그인 도중 오류가 발생하였습니다.</string>
+
+    <string name="permission_rationale">sms보내기를 위해 권한이 필요합니다.</string>
+    <string name="btn_text_retry">조회</string>
+
+    <!--gcm message-->
+    <string name="gcm_send_message">생성된 고유정보(토큰)를 시스템에 등록하였습니다. 이제 알림을 사용하실수 있습니다.</string>
+    <string name="registering_message">알림을 받기위하여 고유정보(토큰)를 생성하고 있습니다. 잠시 기다려 주십시요.</string>
+    <string name="token_error_message">고유정보(토큰) 처리중 오류가 발생하였습니다.</string>
+    <string name="error_update_token">고유정보(토큰)를 데이터베이스에 저장중 오류가 발생하였습니다.</string>
+
+    <string name="msg_title">님께 메세지를 보냈습니다.</string>
+
+
+    <string name="title_no">번호</string>
+    <string name="title_receiver">수신자</string>
+    <string name="title_message">내용</string>
+    <string name="title_date">발송일</string>
+    <string name="title_sender">송신자</string>
+
+
+    //Exception messages
+    <string name="exception_message_generic">어플리케이션에서 오류가 발생하였습니다.</string>
+    <string name="exception_message_no_connection">인터넷 연결관련 오류가 발생하였습니다.</string>
+
+</resources>

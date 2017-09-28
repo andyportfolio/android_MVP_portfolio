@@ -1,0 +1,117 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda' //retrolambda
+//apply plugin: 'com.neenbedankt.android-apt' //dagger
+//apply plugin: 'com.google.gms.google-services' //firebase gcm
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
+    defaultConfig {
+        applicationId "kt.kr.co.kiwimedia.www.kiwisms"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+//        jackOptions {
+//            enabled true
+//        }
+
+//        compileOptions {
+//            sourceCompatibility JavaVersion.VERSION_1_8
+//            targetCompatibility JavaVersion.VERSION_1_8
+//        }
+
+        packagingOptions {
+            exclude 'META-INF/rxjava.properties'
+        }
+
+        dataBinding {
+            enabled = true
+        }
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+// Guava conflict
+// Error:Conflict with dependency 'com.google.code.findbugs:jsr305'. Resolved versions for app (1.3.9)
+// and test app (2.0.1) differ. See http://g.co/androidstudio/app-test-app-conflict for details.
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
+    }
+    //retrolambda
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    //guava
+    //compile 'com.google.guava:guava:23.0-android'
+    //rxjava - https://github.com/ReactiveX
+    //    compile 'io.reactivex:rxjava:1.1.8'
+    //    compile 'io.reactivex:rxandroid:1.2.1'
+    //compile 'com.jakewharton.rxbinding:rxbinding:0.3.0'
+    // retrofit , gson converter, rxjava integration
+    //compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    // OkHttp - for logging
+    // Dagger dependencies
+    //    apt "com.google.dagger:dagger-compiler:2.7"
+    //    provided 'org.glassfish:javax.annotation:10.0-b28'
+    //    compile "com.google.dagger:dagger:2.7"
+    // Dagger dependencies - 20170824
+    //    apt "com.google.dagger:dagger-compiler:2.11"
+    //    provided 'org.glassfish:javax.annotation:10.0-b28'
+    //    compile "com.google.dagger:dagger:2.11"
+    //    compile "com.google.dagger:dagger-android:2.11"
+    //    compile "com.google.dagger:dagger-android-support:2.11"
+    //    apt "com.google.dagger:dagger-android-processor:2.11"
+    //https://medium.com/@iammert/new-android-injector-with-dagger-2-part-1-8baa60152abe
+    //    compile 'com.google.dagger:dagger:2.11-rc2'
+    //    annotationProcessor 'com.google.dagger:dagger-compiler:2.11-rc2'
+    //    compile 'com.google.dagger:dagger-android-support:2.11-rc2'
+    //https://google.github.io/dagger/android.html
+    //https://android.jlelse.eu/android-and-dagger-2-10-androidinjector-5e9c523679a3
+    // Dagger core dependencies
+    // Dagger Android dependencies
+    //compile 'com.google.dagger:dagger-android:2.11'
+    // if you use the support libraries
+    //apt는 gradle plugin version 2.2.0 이하일때 사용한다
+    //    compile 'com.google.dagger:dagger-android:2.0'
+    //    compile 'com.google.dagger:dagger-android-support:2.0' // if you use the support libraries
+    //    annotationProcessor 'com.google.dagger:dagger-android-processor:2.7'
+    //출처: http://codersdict.com/19 [코딕트] -- firebase gcm
+    //compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
+    compile 'com.android.support:design:26.0.0-alpha1'
+    compile 'com.android.support:cardview-v7:26.0.0-alpha1'
+    compile 'com.android.support:recyclerview-v7:26.0.0-alpha1'
+
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    compile 'com.squareup.okhttp3:okhttp-urlconnection:3.4.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.google.dagger:dagger:2.11'
+    compile 'com.google.dagger:dagger-android-support:2.11'
+    compile 'com.google.firebase:firebase-messaging:11.0.4'
+    testCompile 'junit:junit:4.12'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.11'
+
+}
+
+apply plugin: 'com.google.gms.google-services'

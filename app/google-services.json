@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "121127483375",
+    "firebase_url": "https://kiwisms-f2867.firebaseio.com",
+    "project_id": "kiwisms-f2867",
+    "storage_bucket": "kiwisms-f2867.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:121127483375:android:a041866a66bc37a9",
+        "android_client_info": {
+          "package_name": "kt.kr.co.kiwimedia.www.kiwisms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "121127483375-a9ub64ft56gbtr4q1ec3do26d5e738rm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kt.kr.co.kiwimedia.www.kiwisms",
+            "certificate_hash": "498893a2727735ea26a708b691b2ecf79617d904"
+          }
+        },
+        {
+          "client_id": "121127483375-3hrvq2iutq8je478mb947mt7b2050616.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEj6YfWKdfbQJOXG_IHDjeeX4mWfHlfr8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "121127483375-3hrvq2iutq8je478mb947mt7b2050616.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">KiwiSMS</string>
+    <string name="activity_title_sms_list">SMS List</string>
+    <string name="activity_title_sms_details">SMS Details</string>
+
+    <string name="prompt_welcome">Welcome to KiwiSMS</string>
+
+    <string name="alert_title">SMS Permission is required in KiwiSMS</string>
+    <string name="alert_positive_button">Setting</string>
+    <string name="alert_negative_button">Cancel</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_userid">UserID</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_userid">This user id is required</string>
+    <string name="error_invalid_password">This password is required</string>
+    <string name="error_field_required">This is requried field</string>
+    <string name="error_invlaid_login">user id or password is not valid</string>
+    <string name="error_login_fail">Error while login to system</string>
+
+    <string name="permission_rationale">Contacts permissions are needed for providing sms</string>
+    <string name="btn_text_retry">Retry</string>
+
+    <!--fcm message-->
+    <string name="gcm_send_message">Update is completed. User can use alam system</string>
+    <string name="registering_message">Now updating token to system ...</string>
+    <string name="token_error_message">Error while update token to system</string>
+    <string name="error_update_token">Error while update token to database</string>
+
+    <string name="msg_title">send message</string>
+
+
+    <!--fcm title-->
+    <string name="title_no">No</string>
+    <string name="title_receiver">Receiver</string>
+    <string name="title_message">Message</string>
+    <string name="title_date">Date</string>
+    <string name="title_sender">Sender</string>
+
+    //Exception messages
+    <string name="exception_message_generic">There was an application error</string>
+    <string name="exception_message_no_connection">There is no internet connection</string>
+
+</resources>
