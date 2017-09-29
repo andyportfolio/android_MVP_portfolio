@@ -127,6 +127,7 @@ public class FirebaseInstanceIDService extends FirebaseInstanceIdService {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        mUpdateTokenUsecase.dispose();
+        CustomLog.d(TAG,"onDestroy() => mUpdateTokenUsecase.dispose();");
+       // mUpdateTokenUsecase.dispose();
     }
 }

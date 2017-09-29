@@ -32,7 +32,7 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
     private String from;  //message unique id
     private String msg;   //message 내용
     private String receiver_number; //보낼곳 전화번호
-    private String id;  //id
+    private String num;  //num
     private String datetime;
 
     //여기서는 구현할 필요가 없다
@@ -90,17 +90,17 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
         from = remoteMessage.getFrom();
 
         receiver_number = (String)map.get("receiver_number");
-        id              = (String)map.get("id");
+        num              = (String)map.get("num");
 
-        if (id == null || id.isEmpty()) id = "NA";
+        if (num == null || num.isEmpty()) num = "NA";
 
         datetime = getDateTime();
 
-        CustomLog.d(TAG, "from: " + from + " receiver_number: " + receiver_number + " id: " + id + " datetime: " + datetime);
+        CustomLog.d(TAG, "from: " + from + " receiver_number: " + receiver_number + " num: " + num + " datetime: " + datetime);
 
 
         this.mUpdateSMSSendResultUsecase.execute(new UpdateSMSSendResultObserver(),
-                UpdateSMSSendResult.Params.forUpdateSMSSendResult(id, datetime,remoteMessage.getFrom()));
+                UpdateSMSSendResult.Params.forUpdateSMSSendResult(num, datetime,remoteMessage.getFrom()));
 
     }
 
@@ -186,7 +186,8 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
     @Override
     public void onDestroy() {
         super.onDestroy();
-        mUpdateSMSSendResultUsecase.dispose();
+        CustomLog.d(TAG,"onDestroy() => mUpdateSMSSendResultUsecase.dispose();");
+       // mUpdateSMSSendResultUsecase.dispose();
     }
 }
 
